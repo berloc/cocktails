@@ -4,7 +4,8 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import { loadFonts } from './plugins/webfontloader'
+import notifications from '@kyvg/vue3-notification'
 
 loadFonts()
 
-createApp(App).use(router).use(store).use(vuetify).mount('#app')
+createApp(App).use(router).use(store).use(vuetify).use(notifications).mount('#app')

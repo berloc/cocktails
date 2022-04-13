@@ -5,7 +5,7 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <cocktail :cocktail="cocktail"></cocktail>
+        <cocktail :cocktail="cocktail" />
       </v-col>
     </v-row>
     <cocktail-finder />

@@ -6,7 +6,7 @@
       <v-btn class="text-none" @click="search" :disabled="name === ''">Search</v-btn>
     </v-col>
   </v-row>
-  <div class="mt-3 text-red-accent-1" v-if="!!message" v-html="message" />
+  <div class="mt-3" v-if="!!message" v-html="message" />
   <v-list>
     <v-list-item v-for="(cocktail, i) in cocktails" :key="i" @click="setCocktail(cocktail)">
       {{ cocktail.strDrink }}

@@ -1,7 +1,8 @@
 import { getKeyAsList } from '@/util/getObjectKeyAsList'
+import Notification from '@/model/Notification'
 
 export const actions = {
-  async getRandomCocktail({ commit }) {
+  async getRandomCocktail({ commit, dispatch }) {
     try {
       commit('setMsg', '')
       commit('setCocktails', [])
@@ -11,12 +12,15 @@ export const actions = {
       drink.ingredients = getKeyAsList(drink)
       commit('setCocktail', drink)
     } catch (e) {
+      dispatch('notification/push', new Notification('error', 'Error', 'An error occurred during the api call'), {
+        root: true,
+      })
     } finally {
       commit('setLoading', false)
     }
   },
 
-  async getCocktailByName({ commit, state }) {
+  async getCocktailByName({ commit, state, dispatch }) {
     try {
       commit('setMsg', '')
       commit('setLoading', true)
@@ -32,6 +36,9 @@ export const actions = {
         commit('setCocktail', drink)
       }
     } catch (e) {
+      dispatch('notification/push', new Notification('error', 'Error', 'An error occurred during the api call'), {
+        root: true,
+      })
     } finally {
       commit('setLoading', false)
     }
