@@ -1,0 +1,4 @@
+static/images
+**/coverage/**
+backend/public/dist/**
+frontend/dist/**

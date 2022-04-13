@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "format": "cross-env ./node_modules/.bin/prettier --write '{backend,frontend}/**/*.{js,vue}'"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "prettier": "^2.6.2"
+  }
+}

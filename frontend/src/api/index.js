@@ -6,7 +6,6 @@ clientFiles.keys().forEach((key) => {
   API[serviceName] = new (clientFiles(key).default)()
 })
 
-
 Object.values(API).forEach((client) => {
   if (process.env.NODE_ENV != 'development') return
   client.http.interceptors.response.use(
