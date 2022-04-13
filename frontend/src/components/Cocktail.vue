@@ -21,8 +21,9 @@
 <script>
 import { useStore } from 'vuex'
 import { computed } from 'vue'
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   name: 'Cocktail',
   props: ['cocktail'],
   setup() {
@@ -32,5 +33,5 @@ export default {
 
     return { getAnotherCocktail, loading }
   },
-}
+})
 </script>

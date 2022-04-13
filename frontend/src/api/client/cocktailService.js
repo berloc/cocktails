@@ -5,7 +5,11 @@ export default class CocktailService extends Service {
     super(process.env.VUE_APP_COCKTAIL_SERVICE)
   }
 
-  getRandom(data) {
+  getRandom() {
     return this.http.get('/cocktail')
+  }
+
+  getByName(name) {
+    return this.http.get(`/cocktail?name=${name}`)
   }
 }

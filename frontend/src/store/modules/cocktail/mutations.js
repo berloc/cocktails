@@ -2,7 +2,19 @@ import { updateField } from 'vuex-map-fields'
 
 export const mutations = {
   updateField,
-  SET_COCKTAIL(state, payload) {
-    state.cocktail = payload
+  setCocktail(state, cocktail) {
+    state.cocktail = cocktail
+  },
+  setCocktails(state, cocktails) {
+    state.cocktails = cocktails
+  },
+  setLoading(state, payload) {
+    state.loading = payload
+  },
+  setMsg(state, message) {
+    state.message = message
+  },
+  resetName(state) {
+    state.name = ''
   },
 }

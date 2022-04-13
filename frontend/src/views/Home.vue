@@ -8,6 +8,7 @@
         <cocktail :cocktail="cocktail"></cocktail>
       </v-col>
     </v-row>
+    <cocktail-finder />
   </v-container>
 </template>
 
@@ -17,17 +18,17 @@ import { useStore } from 'vuex'
 import { computed } from 'vue'
 
 import Cocktail from '@/components/Cocktail'
+import CocktailFinder from '@/components/CocktailFinder'
 
 export default defineComponent({
   name: 'HomeView',
-  components: { Cocktail },
+  components: { CocktailFinder, Cocktail },
   setup() {
     const store = useStore()
     const cocktail = computed(() => store.getters['cocktail/cocktail'])
-    const loading = computed(() => store.getters['cocktail/loading'])
 
     store.dispatch('cocktail/getRandomCocktail')
-    return { cocktail, loading }
+    return { cocktail }
   },
 })
 </script>
