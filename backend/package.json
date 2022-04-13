@@ -1,0 +1,9 @@
+{
+  "name": "cocktail-backend",
+  "version": "1.0.0",
+  "description": "Backend service to get data from public coctail API",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3"
+  }
+}
