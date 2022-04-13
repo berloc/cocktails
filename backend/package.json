@@ -1,9 +1,13 @@
 {
   "name": "cocktail-backend",
+  "author": {
+    "name": "Bereczki Lorant",
+    "email": "berloc1987@gmail.com"
+  },
   "version": "1.0.0",
   "description": "Backend service to get data from public coctail API",
   "scripts": {
-    "start-server": "node index"
+    "start-server": "node src/index"
   },
   "dependencies": {
     "axios": "^0.26.1",

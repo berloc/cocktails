@@ -1,4 +1,8 @@
 {
+  "author": {
+    "name": "Bereczki Lorant",
+    "email": "berloc1987@gmail.com"
+  },
   "scripts": {
     "format": "cross-env ./node_modules/.bin/prettier --write '{backend,frontend}/**/*.{js,vue}'"
   },

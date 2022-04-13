@@ -1,6 +1,10 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "cocktail-frontend",
+  "author": {
+    "name": "Bereczki Lorant",
+    "email": "berloc1987@gmail.com"
+  },
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
