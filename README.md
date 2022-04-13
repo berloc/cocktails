@@ -1,3 +1,8 @@
+# Prerequisite
+- node
+- yarn
+- vue-cli-5
+
 # Install dependencies in cocktail folder
 ```
 yarn install

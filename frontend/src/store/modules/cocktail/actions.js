@@ -9,7 +9,7 @@ export const actions = {
       commit('setLoading', true)
       let res = await this.$api.cocktailService.getRandom()
       let drink = res.data.drinks[0]
-      drink.ingredients = getKeyAsList(drink)
+      drink.ingredients = getKeyAsList(drink, 'strIngredient')
       commit('setCocktail', drink)
     } catch (e) {
       dispatch('notification/push', new Notification('error', 'Error', 'An error occurred during the api call'), {
@@ -32,7 +32,7 @@ export const actions = {
         commit('setMsg', 'There are many cocktails with this name, please click on of them')
       } else if (res.data.drinks.length === 1) {
         let drink = res.data.drinks[0]
-        drink.ingredients = getKeyAsList(drink)
+        drink.ingredients = getKeyAsList(drink, 'strIngredient')
         commit('setCocktail', drink)
       }
     } catch (e) {
@@ -46,7 +46,7 @@ export const actions = {
 
   setCocktail({ commit }, cocktail) {
     let drink = JSON.parse(JSON.stringify(cocktail))
-    drink.ingredients = getKeyAsList(drink)
+    drink.ingredients = getKeyAsList(drink, 'strIngredient')
     commit('setCocktail', drink)
     commit('setMsg', '')
     commit('resetName')

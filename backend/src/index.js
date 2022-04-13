@@ -17,5 +17,5 @@ app.use(cors())
 app.use('/api', require('./routes/api'))
 
 app.listen(port, () => {
-  console.log(`Backend app listening on port ${port}`)
+  console.debug(`Backend app listening on port ${port}`)
 })

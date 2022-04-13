@@ -1,4 +1,5 @@
 import Service from '../abstract/service.js'
+import { v4 as uuidv4 } from 'uuid'
 
 export default class CocktailService extends Service {
   constructor() {
@@ -6,10 +7,22 @@ export default class CocktailService extends Service {
   }
 
   getRandom() {
-    return this.http.get('/cocktail')
+    const headers = {
+      'app-name': 'CocktailFrontend',
+      'trace-id': uuidv4(),
+    }
+    return this.http.get('/cocktail', {
+      headers,
+    })
   }
 
   getByName(name) {
-    return this.http.get(`/cocktail?name=${name}`)
+    const headers = {
+      'app-name': 'CocktailFrontend',
+      'trace-id': uuidv4(),
+    }
+    return this.http.get(`/cocktail?name=${name}`, {
+      headers,
+    })
   }
 }
