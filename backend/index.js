@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = 4000
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 app.use(bodyParser.json())
 
@@ -11,6 +12,7 @@ const staticFileMiddleware = express.static('public/dist', {
   extensions: ['html'],
 })
 app.use(staticFileMiddleware)
+app.use(cors())
 
 app.use('/api', require('./routes/api'))
 

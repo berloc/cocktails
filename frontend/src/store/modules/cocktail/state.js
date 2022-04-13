@@ -1,1 +1,4 @@
-export const state = (content) => () => ({})
+export const state = (content) => () => ({
+  loading: false,
+  cocktail: {},
+})
