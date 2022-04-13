@@ -5,7 +5,6 @@ const bodyParser = require('body-parser')
 
 app.use(bodyParser.json())
 
-app.use('/api', require('./routes/api'))
 
 const staticFileMiddleware = express.static('public/dist', {
   redirect: false,
@@ -13,6 +12,9 @@ const staticFileMiddleware = express.static('public/dist', {
   extensions: ['html'],
 })
 app.use(staticFileMiddleware)
+
+app.use('/api', require('./routes/api'))
+
 
 app.listen(port, () => {
   console.log(`Backend app listening on port ${port}`)
